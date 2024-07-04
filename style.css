@@ -1,17 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Roboto";
 }
 
-#heroSection{
-    height: 100vh;
-    width: 100vw;
-    position: relative;
+:root {
+    --background: #F5F5F5;
+    --primary: #212121;
+    --button-bg: #6200EE;
+    --button-text: #F5F5F5;
+    --accent: #6200EE;
+    --border: #E0E0E0;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+}
+
+button {
+    background: var(--button-bg);
+    color: var(--background);
+    padding: 10px;
+    border-radius: 15px;
+    font-family: "Roboto";
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+button:hover {
+    transform: translateY(-10px);
+    transition: 0.1s;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary)
+}
+
+a:hover {
+    color: var(--accent);
+    transition: 0.1s;
+}
+
+nav{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    height: 100px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    border-bottom: 2px solid var(--border);
+    backdrop-filter: blur(20px);
+    z-index: 10;
+}
+
+nav span.hamburger{
+    display: none;
+}
+
+.links{
+    display:flex;
+    gap: 30px;
+    justify-content: space-around;
+    text-transform: uppercase;
+}
+
+.links a {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.logo{
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+#home{
+    height: calc(100vh - 100px);
+    width: 100%;
+    position: relative;
+    display: flex;
     justify-content: center;
-    /* background-color: black; */
+    align-items: center;
+    background-color: var(--background);
+}
+
+.intro{
+    z-index: 1;
+    text-align: center;
+    padding: 1rem;
+    color: var(--primary);
+}
+
+.intro:hover {
+    backdrop-filter: blur(5px);
+}
+
+.intro p{
+    width: 60%;
+    margin: auto;
+    margin-bottom: 1rem;
 }
 
 #playground{
@@ -24,32 +126,74 @@
     pointer-events: none;
 }
 
-.detail{
-    padding: 2rem;
-    border-radius: 10px;
-    /* backdrop-filter: blur(5px); */
-    z-index: 2;
-    /* color: white; */
+#about{
+    height: 100vh;
+    width: 100%;
+    background: var(--background);
 }
 
-.name{
-    color: #E74C3C ;
-    text-shadow: 0 0 10px #E74C3C,
-    /* 0 0 20px #E74C3C, */
-    0 0 30px #E74C3C,
-    /* 0 0 40px #E74C3C, */
-    0 0 50px #E74C3C;
+@media(max-width: 768px){
+
+    nav span.hamburger{
+        display: block;
+        font-size: 1.5rem;
+    }
+
+    .links{
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 100px;
+        gap: 0;
+        
+    }
+
+    .links a{
+        width: 100%;
+        border-bottom: 2px solid var(--border);
+        text-align: center;
+        padding: 10px;
+    }
+
+    .active{
+        display: flex;
+    }
+
+    .intro p{
+        width: 80%;
+    }
 }
 
-h1{
-    font-size: 3rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-    margin-bottom: 1rem;
+@media(max-width: 620px){
+    .intro p{
+        width: 100%;
+    }
 }
 
-h3{
-    font-size: 1.5rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
+@media(max-width: 570px){
+
+    h1{
+        font-size: 2rem;
+    }
+
+    p, button{
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width: 400px){
+    h1{
+        font-size: 1.5rem;
+    }
+
+    p, button{
+        font-size: 1.1rem;
+    }
+
+    nav{
+        padding: 0 30px;
+    }
 }
