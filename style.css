@@ -467,7 +467,7 @@ form button {
         margin: 1rem 0;
     }
 
-    #skills {
+    .skills-list {
         height: 100vh;
         overflow: auto;
     }
